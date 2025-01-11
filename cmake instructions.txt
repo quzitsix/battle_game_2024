@@ -1,0 +1,2 @@
+cmake -S F:/desktop/vscode_documents/battle_game_2024 -B F:/desktop/vscode_documents/battle_game_2024/build -DCMAKE_TOOLCHAIN_FILE=F:/desktop/vscode_documents/vcpkg/scripts/buildsystems/vcpkg.cmake -G "MinGW Makefiles" -DCMAKE_C_COMPILER=F:\msys64\mingw64\bin\gcc.exe
+cmake -S F:/desktop/vscode_documents/battle_game_2024 -B F:/desktop/vscode_documents/battle_game_2024/build -DCMAKE_TOOLCHAIN_FILE=F:/desktop/vscode_documents/vcpkg/scripts/buildsystems/vcpkg.cmake -G "Ninja" -DCMAKE_C_COMPILER=F:\msys64\mingw64\bin\gcc.exe

@@ -13,7 +13,7 @@ CannonBall::CannonBall(GameCore *core,
                        float damage_scale,
                        glm::vec2 velocity)
     : Bullet(core, id, unit_id, player_id, position, rotation, damage_scale),
-      velocity_(velocity) {
+      velocity_(velocity) , initial_position_(position) , distance(0.0f) , spread_distance(1.0f) {
 }
 
 void CannonBall::Render() {
@@ -26,8 +26,12 @@ void CannonBall::Render() {
 void CannonBall::Update() {
   position_ += velocity_ * kSecondPerTick;
   bool should_die = false;
+  distance=glm::distance(initial_position_ , position_);
   if (game_core_->IsBlockedByObstacles(position_)) {
     should_die = true;
+  }
+  else if(distance >= spread_distance){
+    should_die=true;
   }
 
   auto &units = game_core_->GetUnits();
